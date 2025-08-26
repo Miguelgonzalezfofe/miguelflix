@@ -1,4 +1,4 @@
-import "./app.css"
+import ".src/app.css"
 
 import MoviePage from "./pages/MoviesPage"
 import Header from "./components/Header"
