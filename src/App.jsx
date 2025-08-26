@@ -1,3 +1,4 @@
+import "./app.css"
 
 import MoviePage from "./pages/MoviesPage"
 import Header from "./components/Header"
@@ -8,6 +9,7 @@ import Series from "./components/Series"
 
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import ListCard from "./components/ListCard"
+
 
 function App() {
 
