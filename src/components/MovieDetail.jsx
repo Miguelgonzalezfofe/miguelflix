@@ -28,16 +28,18 @@ export default function MovieDetail() {
     return (
         <>
             <div className='movie-detail'>
-                <div className='movie-detail-bg' style={{
-                    backgroundImage: `url(https://image.tmdb.org/t/p/original${movie.backdrop_path})`,
-                }}>
-                    <div className='movie-detail-overlay'>
-                        <Container>
-                            <h1 className="display-4 fw-bold mb-0">{movie.title}</h1>
-                            <p className="lead">{movie.tagline}</p>
-                        </Container>
+                {window.innerWidth >= 768 &&
+                    <div className='movie-detail-bg' style={{
+                        backgroundImage: `url(https://image.tmdb.org/t/p/w1280${movie.backdrop_path})`,
+                    }}>
+                        <div className='movie-detail-overlay'>
+                            <Container>
+                                <h1 className="display-4 fw-bold mb-0">{movie.title}</h1>
+                                <p className="lead">{movie.tagline}</p>
+                            </Container>
+                        </div>
                     </div>
-                </div>
+                }
 
                 <Container className="py-5">
                     <Row className="gx-5">
@@ -137,7 +139,7 @@ export default function MovieDetail() {
             }
 
             <div className="d-flex justify-content-center">
-            <Button variant="danger" href="/" className="m-4">Volver al inicio</Button>
+                <Button variant="danger" href="/" className="m-4">Volver al inicio</Button>
             </div>
 
 

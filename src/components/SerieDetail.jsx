@@ -4,7 +4,7 @@ import { fetchSerie } from '../utils/Api';
 import { Container, Row, Col, Badge, Card, ListGroup, Button } from 'react-bootstrap';
 
 
-export default function SerieDetail() { 
+export default function SerieDetail() {
     const { id } = useParams();
     const [serie, setSerie] = useState(null);
 
@@ -20,16 +20,17 @@ export default function SerieDetail() {
     return (
         <>
             <div className='movie-detail'>
-                <div className='movie-detail-bg' style={{
-                    backgroundImage: `url(https://image.tmdb.org/t/p/original${serie.backdrop_path})`,
-                }}>
-                    <div className='movie-detail-overlay'>
-                        <Container>
-                            <h1 className="display-4 fw-bold mb-0">{serie.title}</h1>
-                            <p className="lead">{serie.tagline}</p>
-                        </Container>
-                    </div>
-                </div>
+                {window.innerWidth >= 768 &&
+                    <div className='movie-detail-bg' style={{
+                        backgroundImage: `url(https://image.tmdb.org/t/p/w1280${serie.backdrop_path})`,
+                    }}>
+                        <div className='movie-detail-overlay'>
+                            <Container>
+                                <h1 className="display-4 fw-bold mb-0">{serie.title || serie.name}</h1>
+                                <p className="lead">{serie.tagline}</p>
+                            </Container>
+                        </div>
+                    </div>}
 
                 <Container className="py-5">
                     <Row className="gx-5">
@@ -117,7 +118,7 @@ export default function SerieDetail() {
             </div>
 
             <div className="d-flex justify-content-center">
-            <Button variant="danger" href="/" className="m-4">Volver al inicio</Button>
+                <Button variant="danger" href="/" className="m-4">Volver al inicio</Button>
             </div>
 
 
