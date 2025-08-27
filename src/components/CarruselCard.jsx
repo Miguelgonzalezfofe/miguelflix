@@ -10,7 +10,7 @@ export default function CarruselCard({ props, title,type }) {
                 <div className="d-flex scroll-container">
                     {props.map(prop => (
                         // Cada tarjeta de película
-                        <Link to={`/${type}/${prop.id}`} key={prop.id} className="movie-card-wrapper text-decoration-none">
+                        <Link to={`/${type}/${prop.id}`} data={prop.id} key={prop.id} className="movie-card-wrapper text-decoration-none">
                             <Card
                                 className="bg-dark text-white border-0 shadow-lg"
                                 style={{

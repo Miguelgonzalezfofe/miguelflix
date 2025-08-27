@@ -1,12 +1,10 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchSerie } from '../utils/Api';
-// import MovieVideoPlayer from './MovieVideoPlayer';
-
 import { Container, Row, Col, Badge, Card, ListGroup, Button } from 'react-bootstrap';
 
 
-export default function MovieDetail() {
+export default function SerieDetail() { 
     const { id } = useParams();
     const [serie, setSerie] = useState(null);
 

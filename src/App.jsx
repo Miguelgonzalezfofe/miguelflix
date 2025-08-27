@@ -3,6 +3,7 @@ import "./App.css"
 import MoviePage from "./pages/MoviesPage"
 import Header from "./components/Header"
 import MovieDetail from "./components/MovieDetail"
+import SerieDetail from "./components/SerieDetail"
 import Movies from "./components/Movies"
 import Series from "./components/Series"
 
@@ -20,7 +21,7 @@ function App() {
         <Route path="/" element={<MoviePage />} />
         <Route path="*" element={<div className="d-flex justify-content-center align-items-center" style={{ height: "100vh" }}><h2>Page not found</h2></div>} />
         <Route path="movie/:id" element={<MovieDetail />} />
-        <Route path="serie/:id" element={<MovieDetail />} />
+        <Route path="serie/:id" element={<SerieDetail />} />
         <Route path="movies" element={<Movies />} />
         <Route path="series" element={<Series />} />
       </Routes>
