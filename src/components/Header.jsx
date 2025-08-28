@@ -9,8 +9,10 @@ function Header() {
         <Navbar expand="lg" className="position-fixed w-100 top-0 start-0" >
             <Container>
                 <Navbar.Brand as={Link} to="/" className='text-danger'>MiguelFlix</Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav"> 
+                <Navbar.Toggle aria-controls="basic-navbar-nav">
+                    <i className="bi bi-list" style={{color: 'white'}}></i>
+                </Navbar.Toggle>
+                <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ms-auto">
                         <Nav.Link as={Link} to="/">Inicio</Nav.Link>
                         <Nav.Link as={Link} to="/movies">Películas</Nav.Link>

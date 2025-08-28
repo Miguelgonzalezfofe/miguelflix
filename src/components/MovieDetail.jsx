@@ -27,7 +27,7 @@ export default function MovieDetail() {
     if (!movie) return <div className="d-flex justify-content-center align-items-center" style={{ height: "100vh" }}><h2>Cargando...</h2></div>;
     return (
         <>
-            <div className='movie-detail'>
+            <div className='movie-detail mt-4'>
                 {window.innerWidth >= 768 &&
                     <div className='movie-detail-bg' style={{
                         backgroundImage: `url(https://image.tmdb.org/t/p/w1280${movie.backdrop_path})`,

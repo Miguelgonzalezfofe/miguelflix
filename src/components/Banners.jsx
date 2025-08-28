@@ -43,9 +43,9 @@ function Banners() {
         <Carousel.Item key={banner.id}>
           <Link to={`/movie/${banner.id}`}>
             <img
-              src={`https://image.tmdb.org/t/p/w1280${banner.backdrop_path}`}
+              src={`https://image.tmdb.org/t/p/w500${banner.poster_path}`}
               srcSet={`https://image.tmdb.org/t/p/w780${banner.poster_path} 780w, https://image.tmdb.org/t/p/w1280${banner.backdrop_path} 1280w`}
-              sizes="(max-width: 768px) 780px, 100vw"
+              sizes="100vw"
               alt={banner.title}
               className="d-block w-100 rounded"
               style={{ height: '100dvh', objectFit: 'cover' }}

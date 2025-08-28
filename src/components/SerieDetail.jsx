@@ -21,7 +21,7 @@ export default function SerieDetail() {
         <>
             <div className='movie-detail'>
                 {window.innerWidth >= 768 &&
-                    <div className='movie-detail-bg' style={{
+                    <div className='movie-detail-bg ' style={{
                         backgroundImage: `url(https://image.tmdb.org/t/p/w1280${serie.backdrop_path})`,
                     }}>
                         <div className='movie-detail-overlay'>
@@ -40,7 +40,7 @@ export default function SerieDetail() {
                                     variant="top"
                                     src={`https://image.tmdb.org/t/p/w500${serie.poster_path}`}
                                     alt={serie.title}
-                                    className="rounded"
+                                    className="rounded mt-5"
                                 />
                                 <Card.Body>
                                     <Card.Text className="d-flex align-items-center justify-content-between">
