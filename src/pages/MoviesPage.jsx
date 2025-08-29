@@ -46,7 +46,7 @@ function MoviePage() {
             <Hero />
             <ListCard props={movies} count={5} />
             <CarruselCard props={movies} type="movie" title="Películas Populares" />
-            <CarruselCard props={series} type="serie" title="Series Populares" />
+            <CarruselCard props={series} type="tv" title="Series Populares" />
 
         </>
     )

@@ -1,6 +1,6 @@
 import GalleryCard from "./GalleryCard";
 
-function ListCard({ props, count }) {
+function ListCard({ props, count, path }) {
 
     return (
         <>
@@ -8,7 +8,7 @@ function ListCard({ props, count }) {
             <div className="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-4 mb-4" id="movie-cards-container">
                 {props.slice(0, count).map(prop => (
                     <div className="col" key={prop.id}>
-                        <GalleryCard props={prop} />
+                        <GalleryCard props={prop} path={path} />
                     </div>
                 ))}
             </div>

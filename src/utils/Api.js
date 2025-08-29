@@ -101,3 +101,38 @@ export async function fetchVideos(id) {
 
 }
 
+export async function fetchGenero(type) {
+    const url = `https://api.themoviedb.org/3/genre/${type}/list?language=es-419`
+    const options = {
+        method: "GET",
+        headers: {
+            accept: "application/json",
+            Authorization: `Bearer ${tokenSecret}`
+        }
+    }
+    const response = await fetch(url, options)
+    if (!response.ok) throw new Error("error al traer los generos")
+    const data = await response.json();
+    return data.genres
+}
+
+export async function fetchContenidoPorGenero(type, genreId, page = "1") {
+    const url = `https://api.themoviedb.org/3/discover/${type}?include_adult=false&include_video=false&language=es-419&page=${page}&sort_by=popularity.desc&with_genres=${genreId}`
+    const options = {
+        method: 'GET',
+        headers: {
+            accept: 'application/json',
+            Authorization: `Bearer ${tokenSecret}`
+        }
+    }
+    const response = await fetch(url, options)
+    if (!response.ok) throw new Error(`Error al traer los ${type === 'movie' ? 'géneros de películas' : 'géneros de series'}`)
+    const data = await response.json();
+    console.log(data)
+    return data.results
+
+}
+
+
+
+

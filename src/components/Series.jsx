@@ -33,7 +33,7 @@ export default function Series() {
     }
     return <>
         <Container fluid>
-            <ListCard props={series} />
+            <ListCard props={series} path="tv" />
             <ButtonGroup className="d-flex justify-content-center gap-3">
                 <Button variant="danger" className="my-4" onClick={() => setCurrentPage(currentPage - 1)}>Anterior</Button>
                 <Button variant="danger" className="my-4" onClick={() => setCurrentPage(currentPage + 1)}>Siguiente</Button>

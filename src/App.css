@@ -21,6 +21,19 @@
             z-index: 1000;
         }
 
+        .dropdown-menu {
+            backdrop-filter: blur(10px);
+            background-color: var(--secondary-bg);
+
+            .dropdown-item {
+                color: white;
+
+                &:hover {
+                    background-color: var(--accent-color);
+                }
+            }
+        }
+
         .navbar-brand img {
             height: 40px;
         }
@@ -38,11 +51,12 @@
             display: none;
         }
 
-        .bi-list{
+        .bi-list {
             color: white;
             font-size: 1.5rem;
 
         }
+
         /* Estilo del carrusel (sección hero) */
         .carousel-item img {
             border-radius: 10px;
@@ -108,7 +122,7 @@
             background-color: #212529;
             color: #f8f9fa;
         }
-        
+
         .movie-detail-bg {
 
             position: relative;
@@ -145,6 +159,7 @@
             height: 14rem;
             object-fit: cover;
         }
+
         .card-thumbnail-title {
             font-size: 0.875rem;
             margin-bottom: 0.25rem;
