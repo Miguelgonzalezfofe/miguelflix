@@ -7,6 +7,7 @@ import SerieDetail from "./components/SerieDetail"
 import Movies from "./components/Movies"
 import Series from "./components/Series"
 import Genero from "./components/Genero"
+import MiLista from "./components/MiLista"
 
 
 import { BrowserRouter, Routes, Route } from "react-router-dom"
@@ -24,6 +25,7 @@ function App() {
         <Route path="tv/:id" element={<SerieDetail />} />
         <Route path="movies" element={<Movies />} />
         <Route path="series" element={<Series />} />
+        <Route path="mi-lista" element={<MiLista />} />
         <Route path=":type/genero/:id" element={<Genero />} />
 
       </Routes>

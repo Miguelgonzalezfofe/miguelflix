@@ -35,7 +35,7 @@ function Header() {
                         <Nav.Link as={Link} to="/">Inicio</Nav.Link>
                         <Nav.Link as={Link} to="/movies">Películas</Nav.Link>
                         <Nav.Link as={Link} to="/series">Series</Nav.Link>
-                        <Nav.Link as={Link} to="/">Mi Lista</Nav.Link>
+                        <Nav.Link as={Link} to="/mi-lista">Mi Lista</Nav.Link>
 
                         <NavDropdown title="Categorias" id="basic-nav-dropdown">
 
