@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 import ListCard from "./ListCard";
 import { getLike } from "../utils/app";
+import LoadingScreen from "./LoadingScreen";
+
+
 export default function MiLista() {
     const [movies, setMovies] = useState([]);
 
@@ -9,10 +12,14 @@ export default function MiLista() {
     }, []);
 
     return (
-        <div className="container mt-5 pt-5">
-            <h2>Mi Lista</h2>
-            <p>Aquí puedes ver tus películas y series guardadas.</p>
-            <ListCard props={movies} count={5} path="movie" />
-        </div>
+        <>
+            <LoadingScreen />
+            <div className="container mt-5 pt-5">
+                <h2>Mi Lista</h2>
+                <p>Aquí puedes ver tus películas y series guardadas.</p>
+                <ListCard props={movies} count={5} />
+            </div>
+        </>
+
     );
 }

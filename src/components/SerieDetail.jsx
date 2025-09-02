@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchSerie } from '../utils/Api';
 import { Container, Row, Col, Badge, Card, ListGroup, Button } from 'react-bootstrap';
+import LoadingScreen from "./LoadingScreen";
+
 
 
 export default function SerieDetail() {
@@ -16,9 +18,10 @@ export default function SerieDetail() {
         getSerie();
     }, [id]);
 
-    if (!serie) return <div className="d-flex justify-content-center align-items-center" style={{ height: "100vh" }}><h2>Cargando...</h2></div>;
+    if (!serie) return <LoadingScreen />;
     return (
         <>
+            <LoadingScreen />
             <div className='movie-detail'>
                 {window.innerWidth >= 768 &&
                     <div className='movie-detail-bg ' style={{

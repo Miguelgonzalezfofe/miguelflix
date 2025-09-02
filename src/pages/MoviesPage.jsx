@@ -4,12 +4,11 @@ import ListCard from "../components/ListCard"
 import Banners from "../components/Banners"
 import Hero from "../components/Hero"
 import CarruselCard from "../components/CarruselCard"
+import LoadingScreen from "../components/LoadingScreen"
 
 function MoviePage() {
     const [movies, setMovies] = useState([])
     const [series, setSeries] = useState([])
-    const [loading, setLoading] = useState(true)
-
     const getMovies = async () => {
         const movies = await fetchMovies()
         setMovies(movies)
@@ -28,26 +27,14 @@ function MoviePage() {
 
     }, [])
 
-    setTimeout(() => {
-        setLoading(false)
-    }, 500)
-
-    if (loading) {
-        return <>
-            <div className="d-flex justify-content-center align-items-center" style={{ height: '100vh' }}>
-                <h2>Cargando...</h2>
-            </div>
-        </>
-    }
-
     return (
         <>
+            <LoadingScreen/>
             <Banners />
             <Hero />
-            <ListCard props={movies} count={5} />
+            <ListCard props={movies} count={5} type="movie" />
             <CarruselCard props={movies} type="movie" title="Películas Populares" />
             <CarruselCard props={series} type="tv" title="Series Populares" />
-
         </>
     )
 }

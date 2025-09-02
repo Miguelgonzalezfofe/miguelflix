@@ -2,9 +2,8 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchMovie, fetchVideos } from '../utils/Api';
 import MovieVideoPlayer from './MovieVideoPlayer';
-
+import LoadingScreen from "./LoadingScreen";
 import { Container, Row, Col, Badge, Card, ListGroup, Button } from 'react-bootstrap';
-
 
 export default function MovieDetail() {
     const { id } = useParams();
@@ -24,9 +23,10 @@ export default function MovieDetail() {
         getVideos();
     }, [id]);
 
-    if (!movie) return <div className="d-flex justify-content-center align-items-center" style={{ height: "100vh" }}><h2>Cargando...</h2></div>;
+    if (!movie) return <LoadingScreen />;
     return (
         <>
+            <LoadingScreen />
             <div className='movie-detail mt-4'>
                 {window.innerWidth >= 768 &&
                     <div className='movie-detail-bg' style={{

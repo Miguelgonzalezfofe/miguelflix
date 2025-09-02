@@ -2,7 +2,7 @@ import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
 import { setLike } from '../utils/app';
 import { ButtonGroup } from 'react-bootstrap';
-function GalleryCard({ props, path }) {
+function GalleryCard({ props, type }) {
     let { title, poster_path, release_date, id, name } = props
     return (
         <>
@@ -17,7 +17,7 @@ function GalleryCard({ props, path }) {
                             <button className="btn btn-danger" onClick={() => setLike(props)}>
                                 <i className="bi bi-heart-fill"  ></i>
                             </button>
-                            <Link to={`/${path}/${id}`} className='text-decoration-none btn btn-danger' >
+                            <Link to={`/${type}/${id}`} className='text-decoration-none btn btn-danger' >
                                 <small className="text-white">Ver más</small>
                             </Link>
                         </ButtonGroup>

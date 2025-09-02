@@ -128,7 +128,6 @@ export async function fetchContenidoPorGenero(type, genreId, page = "1") {
     const response = await fetch(url, options)
     if (!response.ok) throw new Error(`Error al traer los ${type === 'movie' ? 'géneros de películas' : 'géneros de series'}`)
     const data = await response.json();
-    console.log(data)
     return data.results
 
 }

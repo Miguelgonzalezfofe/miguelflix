@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 import { fetchContenidoPorGenero } from "../utils/Api";
 import { useState, useEffect } from "react";
 import { Button, ButtonGroup } from "react-bootstrap";
+import LoadingScreen from "./LoadingScreen";
+
 
 function Genero() {
     const { id, type } = useParams();
@@ -20,11 +22,12 @@ function Genero() {
 
     return (
         <>
+            <LoadingScreen />
             <h2 className="mb-4">Populares ahora</h2>
             <div className="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-4 mb-4" id="movie-cards-container">
                 {contenido.map(prop => (
                     <div className="col" key={prop.id}>
-                        <GalleryCard props={prop} path={type} />
+                        <GalleryCard props={prop} type={type} />
                     </div>
                 ))}
             </div>
