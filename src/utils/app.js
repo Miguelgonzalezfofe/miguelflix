@@ -1,6 +1,3 @@
-import { ToastContainer, toast } from 'react-toastify';
-
-
 
 export function setLike(e) {
     const listaMegusta = JSON.parse(localStorage.getItem("ListaMeGusta")) || []
@@ -8,18 +5,15 @@ export function setLike(e) {
     if (!boolean) {
         listaMegusta.push(e)
         localStorage.setItem("ListaMeGusta", JSON.stringify(listaMegusta))
-        
 
     } else {
         localStorage.setItem("ListaMeGusta", JSON.stringify(listaMegusta.filter((m) => m.id !== e.id)))
     }
-
-
 }
+
 export function getLike() {
     const listaMegusta = JSON.parse(localStorage.getItem("ListaMeGusta")) || []
     console.log(listaMegusta)
     return listaMegusta
-
 }
 

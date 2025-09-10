@@ -50,7 +50,39 @@ export async function fetchMovie(id) {
     const data = await response.json();
     return data
 }
+export async function fetchSerie(id) {
+    const url = `https://api.themoviedb.org/3/tv/${id}?language=es-419`
 
+    const options = {
+        method: "GET",
+        headers: {
+            accept: "application/json",
+            Authorization: `Bearer ${tokenSecret}`
+        }
+    }
+
+    const response = await fetch(url, options);
+    if (!response.ok) throw new Error("Error al traer la pelicula")
+    const data = await response.json();
+    return data
+}
+export async function fetchSeries(page = "1") {
+    const url = `https://api.themoviedb.org/3/tv/popular?language=es-419&page=${page}`
+
+    const options = {
+        method: "GET",
+        headers: {
+            accept: "application/json",
+            Authorization: `Bearer ${tokenSecret}`
+        }
+    }
+
+    const response = await fetch(url, options);
+    if (!response.ok) throw new Error("Error al traer las Series de la pelicula")
+    const data = await response.json();
+    return data.results
+
+}
 export async function fetchVideos(id) {
     const url = `https://api.themoviedb.org/3/movie/${id}/videos?language=es-419`
     const options = {
@@ -67,8 +99,8 @@ export async function fetchVideos(id) {
     return data.results
 
 }
-export async function fetchSeries(page = "1") {
-    const url = `https://api.themoviedb.org/3/tv/popular?language=es-419&page=${page}`
+export async function fetchGenero(type) {
+    const url = `https://api.themoviedb.org/3/genre/${type}/list?language=es-419`
     const options = {
         method: "GET",
         headers: {
@@ -76,10 +108,27 @@ export async function fetchSeries(page = "1") {
             Authorization: `Bearer ${tokenSecret}`
         }
     }
-
-    const response = await fetch(url, options);
-    if (!response.ok) throw new Error("Error al traer las Series de la pelicula")
+    const response = await fetch(url, options)
+    if (!response.ok) throw new Error("error al traer los generos")
+    const data = await response.json();
+    return data.genres
+}
+export async function fetchContenidoPorGenero(type, genreId, page = "1") {
+    const url = `https://api.themoviedb.org/3/discover/${type}?include_adult=false&include_video=false&language=es-419&page=${page}&sort_by=popularity.desc&with_genres=${genreId}`
+    const options = {
+        method: 'GET',
+        headers: {
+            accept: 'application/json',
+            Authorization: `Bearer ${tokenSecret}`
+        }
+    }
+    const response = await fetch(url, options)
+    if (!response.ok) throw new Error(`Error al traer los ${type === 'movie' ? 'géneros de películas' : 'géneros de series'}`)
     const data = await response.json();
     return data.results
 
 }
+
+
+
+
