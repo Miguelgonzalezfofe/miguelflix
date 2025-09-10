@@ -15,7 +15,7 @@ function GalleryCard({ props, type }) {
                     </Card.Body>
                         <ButtonGroup className='w-100 d-flex justify-content-between'>
                             <button className="btn btn-danger" onClick={() => setLike(props)}>
-                                <i className="bi bi-heart-fill"  ></i>
+                                <i className="bi bi-heart-fill" ></i>
                             </button>
                             <Link to={`/${type}/${id}`} className='text-decoration-none btn btn-danger' >
                                 <small className="text-white">Ver más</small>
