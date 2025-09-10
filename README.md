@@ -1,12 +1,66 @@
-# React + Vite
+# Miguelflix
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🎬 Descripción del Proyecto
 
-Currently, two official plugins are available:
+**Miguelflix** es una aplicación web dinámica, inspirada en la popular plataforma de streaming Netflix. Este proyecto fue desarrollado con el propósito de poner en práctica y consolidar conocimientos en el ecosistema de **React** y otras tecnologías de frontend como **HTML**, **CSS** y **JavaScript**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+La aplicación ofrece una experiencia interactiva al permitir a los usuarios explorar un catálogo de películas, visualizar tráilers y acceder a información detallada sobre cada film.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 Funcionalidades Principales
+
+-   **Página de inicio (Home):** Interfaz con un diseño similar a Netflix, mostrando una selección de películas.
+-   **Reproductor de video:** Permite ver los tráilers de las películas directamente en la plataforma.
+-   **Secciones de películas:** Organiza el contenido en distintas categorías como "Populares", "Estrenos", "Acción", "Terror", etc.
+-   **Información detallada:** Accede a una vista con sinopsis, director, reparto y puntuación al hacer clic en una película.
+
+---
+
+## 🛠️ Tecnologías Utilizadas
+
+-   **React**: Biblioteca de JavaScript para la construcción de interfaces de usuario.
+-   **HTML**: Estructura de la página web.
+-   **CSS**: Estilos y diseño visual de la interfaz.
+-   **JavaScript**: Lógica del lado del cliente para la interactividad y manipulación del DOM.
+
+---
+
+## 📊 API Utilizada
+
+Este proyecto hace uso de la **API de The Movie Database (TMDB)** para obtener toda la información de las películas, como títulos, descripciones, pósters, tráilers y otros metadatos.
+
+-   **Nombre de la API**: The Movie Database (TMDB)
+-   **Documentación**: Puedes encontrar más información y la documentación de la API en el [sitio web oficial de TMDB](https://www.themoviedb.org/documentation/api).
+
+---
+
+## ⚙️ Instalación y Uso
+
+Para ejecutar **Miguelflix** en tu entorno local, sigue estos sencillos pasos:
+
+1.  Clona el repositorio desde GitHub:
+    ```bash
+    git clone [https://github.com/Miguelgonzalezfofe/miguelflix.git](https://github.com/Miguelgonzalezfofe/miguelflix.git)
+    ```
+
+2.  Navega al directorio del proyecto:
+    ```bash
+    cd miguelflix
+    ```
+
+3.  Instala las dependencias de **React** y otras bibliotecas que se requieran:
+    ```bash
+    npm install
+    ```
+
+4.  Inicia la aplicación:
+    ```bash
+    npm start
+    ```
+
+5.  Abre tu navegador y ve a `http://localhost:3000` para ver la aplicación en funcionamiento.
+
+---
+
+Si tienes alguna pregunta o sugerencia, no dudes en contactarme a través de mi perfil de GitHub. ¡Espero que disfrutes el proyecto!
